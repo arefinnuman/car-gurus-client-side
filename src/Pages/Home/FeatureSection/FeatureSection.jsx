@@ -13,16 +13,17 @@ const FeatureSection = () => {
       icon: img1,
     },
     {
+      id: 2,
       name: "Low Odometer",
       icon: img2,
     },
     {
-      id: 2,
+      id: 3,
       name: "Original Engine",
       icon: img3,
     },
     {
-      id: 3,
+      id: 4,
       name: "Certified Tire",
       icon: img4,
     },

@@ -5,7 +5,7 @@ const FeatureCard = ({ feature }) => {
   return (
     <div
       className={
-        "card p-6 card-side bg-white text-black shadow-xl flex justify-center items-center"
+        "card p-6 card-side bg-base-200 text-neutral shadow-xl flex justify-center items-center"
       }
     >
       <figure>

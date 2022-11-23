@@ -5,7 +5,7 @@ import logo from "../../../Assets/logo.png";
 const Footer = () => {
   return (
     <div>
-      <footer className="footer p-10 bg-base-100 text-base-content">
+      <footer className="footer p-10  mt-20 bg-base-100 text-base-content">
         <div>
           <span className="footer-title">Services</span>
           <Link className="link link-hover">Branding</Link>
