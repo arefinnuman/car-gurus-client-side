@@ -3,6 +3,7 @@ import AnimationSection from "./AnimationSection/AnimationSection";
 import FeatureSection from "./FeatureSection/FeatureSection";
 import HomePageBanner from "./HomePageBanner";
 import HomeText from "./HomeText";
+import WhyChooseUs from "./WhyChooseUs";
 const Home = () => {
   return (
     <div>
@@ -10,6 +11,7 @@ const Home = () => {
       <HomeText />
       <FeatureSection />
       <AnimationSection />
+      <WhyChooseUs />
     </div>
   );
 };
