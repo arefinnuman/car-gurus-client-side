@@ -96,7 +96,7 @@ const SignIn = () => {
         </form>
         <p className="mt-4 text-sm text-center">
           New User ?{" "}
-          <Link className="text-primary" to="/signup">
+          <Link className="text-primary" to="/sign-up">
             {" "}
             Create a new account
           </Link>

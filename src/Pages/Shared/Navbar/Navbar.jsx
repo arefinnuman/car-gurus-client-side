@@ -1,9 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../../Assets/logo.png";
-import SecondaryOutlineButton from "../../../Components/SecondaryOutlineButton";
+import { AuthContext } from "../../../Context/AuthProvider";
 
 const Navbar = () => {
+  // Calling User and Logout from AuthContext
+  const { user, logOut } = useContext(AuthContext);
+
+  // Logout Function
+  const handleLogout = () => {
+    logOut()
+      .then(() => {})
+      .catch((err) => console.log(err));
+  };
+
+  // Menu Items
   const navBarItems = (
     <React.Fragment>
       <li>
@@ -12,8 +23,21 @@ const Navbar = () => {
       <li>
         <Link to="/cars">Cars</Link>
       </li>
+
+      {user?.uid ? (
+        <React.Fragment>
+          <li>
+            <button onClick={handleLogout}>Sign Out</button>
+          </li>
+        </React.Fragment>
+      ) : (
+        <li>
+          <Link to="/login">Login</Link>
+        </li>
+      )}
     </React.Fragment>
   );
+
   return (
     <div>
       <div className="navbar bg-base-100">
@@ -46,13 +70,8 @@ const Navbar = () => {
             <img src={logo} alt="" />
           </Link>
         </div>
-        <div className="navbar-center hidden lg:flex">
+        <div className="navbar-end hidden lg:flex">
           <ul className="menu menu-horizontal p-0">{navBarItems}</ul>
-        </div>
-        <div className="navbar-end">
-          <Link to="/sign-in">
-            <SecondaryOutlineButton>Sign in</SecondaryOutlineButton>
-          </Link>
         </div>
       </div>
     </div>
