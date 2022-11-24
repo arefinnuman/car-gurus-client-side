@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../../Assets/logo.png";
+import SecondaryOutlineButton from "../../../Components/SecondaryOutlineButton";
 import { AuthContext } from "../../../Context/AuthProvider";
 
 const Navbar = () => {
@@ -32,7 +33,9 @@ const Navbar = () => {
         </React.Fragment>
       ) : (
         <li>
-          <Link to="/login">Login</Link>
+          <Link to="/sign-in">
+            <SecondaryOutlineButton>Sign in</SecondaryOutlineButton>
+          </Link>
         </li>
       )}
     </React.Fragment>
