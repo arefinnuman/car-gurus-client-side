@@ -3,6 +3,7 @@ import img1 from "../../Assets/WhyChoose/Auto-Loan-copy.png";
 import img2 from "../../Assets/WhyChoose/Funds-Transfer-01-copy.png";
 import img3 from "../../Assets/WhyChoose/MORTGA1.png";
 import img4 from "../../Assets/WhyChoose/ONLINE1.png";
+import PrimaryButton from "../../Components/PrimaryButton";
 
 const WhyChooseUs = () => {
   return (
@@ -39,12 +40,14 @@ const WhyChooseUs = () => {
       </div>
       <div className="w-1/2">
         <h1 className="text-5xl font-black">Why Choose Us</h1>
-        <p className="text-xl mt-4">
+        <p className="text-xl my-4">
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat
           architecto blanditiis porro ea libero iusto earum vitae exercitationem
           inventore velit, aut, itaque quaerat error possimus quos omnis.
           Tempora, omnis voluptatibus.
         </p>
+
+        <PrimaryButton>Buy Now</PrimaryButton>
       </div>
     </section>
   );
