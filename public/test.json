@@ -1,0 +1,125 @@
+[
+  {
+    "name": "Toyota Land Cruiser Prado TX 2018",
+    "img": "https://images.unsplash.com/photo-1554841649-de947c4b954a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1528&q=80",
+    "description": "New shape car, 2018 model year, 2700cc engine capacity, 2TR type engine, LED head lamp, 5D, original navigation, front / side & back monitor, panorama view monitor, audio steering, wooden steering, pre crash safety system, sun roof, full beige leather seat, seat heater, power seat, cruise control, pearl color, side step cover, sun roof vizier, roof rail, rear spoiler, 19 inch alloy wheel, winker mirror.",
+    "price": "40,990",
+    "resalePrice": "30,000",
+    "years of use": "1 year",
+    "engineCapacity": "2700 cc",
+    "location": "Dhaka",
+    "postedTime": "2022-11-01 10:10:10",
+    "postedBy": "Rahim"
+  },
+
+  {
+    "name": "Toyota C-HR 2017",
+    "img": "https://images.unsplash.com/photo-1551952237-954a0e68786c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+    "description": "Multimedia steering controller, push start, touch panel air conditioning, IDLE stop, full fresh leather interior with built-in DVD, super cool AC, 2 airbags, 4 ABS disk rake, anti-theft security system, central lock, tempered glass, original Japanese alloy rim with a new tyre, original HID projection LED headlight, digital AC panel.",
+    "price": "20,300",
+    "resalePrice": "15,000",
+    "years of use": "1.5 year",
+    "engineCapacity": "1500 cc",
+    "location": "Dhaka",
+    "postedTime": "2022-10-10 10:10:10",
+    "postedBy": "Rahim"
+  },
+  {
+    "name": "BMW X2",
+    "img": "https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+    "description": "4-cylinder, 192 PS / 5000-6000 RPM maximum engine power, 280 N-m / 1350-4600 RPM maximim troque, 227 kmph top speed, 52 liter Fuel_tank capacity, 225/55 R17 97W front and rear tyre dimension, 7,5 J x 17 inch rear and front light-alloy.",
+    "price": "49,000",
+    "resalePrice": "35,000",
+    "years of use": "2 year",
+    "engineCapacity": "1998cc",
+    "location": "Dhaka",
+    "postedTime": "2022-10-10 12:10:10",
+    "postedBy": "Karim"
+  },
+  {
+    "name": "Subaru WRX Sedan Manual 2021",
+    "img": "https://images.unsplash.com/photo-1616804087673-cdcd32e5578f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+    "description": "4 cylinder engine, 6-speed gear box, power steering, power windows, power door lock, child safety lock, adjustable seat, 4-wheel disc brakes, strut front suspension, double wishbone back suspension, 4 number of cylinders , Fuel_system with direct injection of gasoline, 35.4 feet minimum turning radius, tubeless type tyre, 60.2 liters Fuel_tank capacity, the car has 4 doors, anti lock braking system, USB & auxiliary input, rear reading lamp, parking sensor, bottle holder, 1 liter of Fuel_will go up to 26Km on the long highway, electronic stability control, dual zone A/C, made in Japan.",
+    "price": "28,420",
+    "resalePrice": "20,000",
+    "engineCapacity": "1598cc",
+    "years of use": "3 year",
+    "location": "Dhaka",
+    "postedTime": "2022-11-10 12:10:10",
+    "postedBy": "Jahid"
+  },
+  {
+    "name": "Audi A5",
+    "img": "https://images.unsplash.com/photo-1616549934828-b8432869678d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+    "description": "2.0 TDI diesel engine, 4-cylinder, 7-speed gear box, 187.74bhp@3800-4200rpm power, 400nm@1750-3000rpm torque, five-link axle with front track rod front / rear suspension, front and rear disc brack, 235 Km/h top speed, power steering, 18 inch alloy wheel, tubeless / radial tyre, 4-door, 19.2 kmpl mileage, 54 liter Fuel_capacity.",
+    "price": "42,400",
+    "resalePrice": "30,000",
+    "engineCapacity": "1968cc",
+    "years of use": "2 year",
+    "location": "Dhaka",
+    "postedTime": "2022-11-10 12:10:10",
+    "postedBy": "Babu"
+  },
+  {
+    "name": "BMW X7",
+    "img": "https://images.unsplash.com/photo-1622230329184-52309e0e5ced?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1472&q=80",
+    "description": "6-cylinder, 340 PS / 5500-6500 RPM maximum engine power, 1500-5200 RPM maximim troque, 245 kmph top speed, 0-100 km/h to 6.1 second, 83 liter Fuel_tank capacity, 275/50 R20 113WXL front and rear tyre dimension, 8,5 J x 20 inch rear and front light-alloy wheel dimension and material.",
+    "price": " 141,300 (most expensive in its line-up!!)",
+    "resalePrice": "100,000",
+    "engineCapacity": "2998cc",
+    "years of use": "2 year",
+    "location": "Chittagong",
+    "postedTime": "2022-11-10 12:10:10",
+    "postedBy": "Abdullah"
+  },
+  {
+    "name": "Mitsubishi Lancer EX",
+    "img": "https://images.unsplash.com/photo-1611396058741-1d570a4fcf95?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+    "description": "Electronically Controlled multi-point Fuel_injection, 16-valve inline - 4 DOHC MIVEC 4A91, 80 kW 6000rpm maximum power, 143 N-m / 4000rpm maximumtorque, 177 km/h top speed, power stairing, 0-100Km speed up to 14.2 second.",
+    "price": " 17,000",
+    "resalePrice": "12,000",
+    "engineCapacity": "1499cc",
+    "years of use": "2 year",
+    "location": "Chittagong",
+    "postedTime": "2022-11-10 12:10:10",
+    "postedBy": "Raheem"
+  },
+  {
+    "name": "Mazda Roadster S Leather 2021",
+    "img": "https://images.unsplash.com/photo-1586464836139-86553c751f65?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80",
+    "description": "Smart key, driver / passenger seat airbag, ABS brake, air conditioner, power steering, idling stop, Bluetooth connection, electric retractable mirror, TV & navigation / memory Navi, CD changer / music server, DVD playback, leather seat, keyless, LED headlamp, back camera, seat heater, electronic stability control, collision damage reduction system, clearance sonar.",
+    "Drivetrain": "Rear-wheel-drive",
+    "price": " 26,830",
+    "resalePrice": "20,000",
+    "engineCapacity": "1500cc",
+    "years of use": "2 year",
+    "location": "Pakistan",
+    "postedTime": "2022-11-10 12:2:10",
+    "postedBy": "Rahim"
+  },
+  {
+    "name": "Audi A4",
+    "img": "https://images.unsplash.com/photo-1600149429933-140a0830db90?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80",
+    "description": "TFSI petrol engine, 4-cylinder, 147.51bhp@5000-6000rpm power, 250Nm@1500-3500rpm torque, 7-speed gear box, 5-link front suspension,trapezoidal link rear suspension, ventilated front disc brack, rear disc brack, power steering, tubeless / radial tyre, 4-door, 210 Kmph top speed, 54 liter Fuel_capacity.",
+    "price": " 49,400",
+    "engineCapacity": "1395cc",
+    "resalePrice": "35,000",
+    "years of use": "2 year",
+    "location": "Dubai",
+    "postedTime": "2022-11-10 12:10:10",
+    "postedBy": "Rahim"
+  },
+  {
+    "name": "KIA Optima 2012",
+    "img": "https://images.unsplash.com/photo-1583351387688-812f11bde75d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+    "description": "Push start, beige leather interior, full leather seats, sunroof, 2000cc engine capacity, LED daylight, fog lamps, reverse camera, multi-function steering wheel, auto speed lock system, soft-touch AC panel, optic miter, armrest, alloy rim.",
+    "Drivetrain": "Front-wheel-drive",
+    "price": " 24,760",
+    "resalePrice": "20,000",
+    "engineCapacity": "2000cc",
+    "years of use": "2 year",
+    "location": "England",
+    "postedTime": "2022-11-10 12:10:10",
+    "postedBy": "Rahmat"
+  }
+]

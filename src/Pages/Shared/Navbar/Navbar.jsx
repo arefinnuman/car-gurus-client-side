@@ -22,7 +22,7 @@ const Navbar = () => {
         <Link to="/home">Home</Link>
       </li>
       <li>
-        <Link to="/cars">Cars</Link>
+        <Link to="/buy-car">Buy</Link>
       </li>
 
       {user?.uid ? (
