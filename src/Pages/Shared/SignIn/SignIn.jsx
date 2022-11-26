@@ -5,6 +5,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import loginAnimation from "../../../Assets/LoginAnimation.json";
 import background from "../../../Assets/loginForm.png";
 import { AuthContext } from "../../../Context/AuthProvider";
+import useToken from "../../../Hooks/useToken";
 const SignIn = () => {
   const { signIn } = useContext(AuthContext);
   const {
@@ -18,7 +19,12 @@ const SignIn = () => {
   const from = location.state?.from?.pathname || "/";
 
   const [loginError, setLoginError] = useState("");
-  // const [loginUserEmail, setLoginUserEmail] = useState("");
+  const [loginUserEmail, setLoginUserEmail] = useState("");
+  const [token] = useToken(loginUserEmail);
+
+  if (token) {
+    navigate(from, { replace: true });
+  }
 
   const handleLogin = (data) => {
     setLoginError("");
@@ -26,8 +32,7 @@ const SignIn = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
-        // setLoginUserEmail(data.email);
-        navigate(from, { replace: true });
+        setLoginUserEmail(data.email);
       })
       .catch((error) => {
         console.error(error.message);
