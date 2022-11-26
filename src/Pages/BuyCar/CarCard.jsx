@@ -1,6 +1,6 @@
 import React from "react";
 
-const CarCard = ({ car }) => {
+const CarCard = ({ setCars, car }) => {
   const {
     name,
     price,
@@ -32,12 +32,18 @@ const CarCard = ({ car }) => {
           <p className="text-sm">Using Period: {yearsOfUse}</p>
 
           <div className="flex justify-between">
-            <p className="">Post By : {postedBy}</p>
+            <p className="">Post By: {postedBy}</p>
             <p className="text-gray-500">{postedTime}</p>
           </div>
           <div className="flex justify-between items-center mt-2">
             <p className="text-sm">{location}</p>
-            <button className="btn btn-primary">Buy Now</button>
+            <label
+              onClick={() => setCars(car)}
+              htmlFor="booking-modal"
+              className="btn btn-primary"
+            >
+              open modal
+            </label>
           </div>
         </div>
       </div>

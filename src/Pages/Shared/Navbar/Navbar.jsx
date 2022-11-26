@@ -24,6 +24,9 @@ const Navbar = () => {
       <li>
         <Link to="/buy-car">Buy</Link>
       </li>
+      <li>
+        <Link to="/dashboard">Dashboard</Link>
+      </li>
 
       {user?.uid ? (
         <React.Fragment>
