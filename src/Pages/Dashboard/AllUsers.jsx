@@ -28,6 +28,22 @@ const AllUsers = () => {
       });
   };
 
+  const handleMakeBuyer = (id) => {
+    fetch(`http://localhost:5000/users/buyer/${id}`, {
+      method: "PUT",
+      headers: {
+        authorization: `bearer ${localStorage.getItem("accessToken")}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.modifiedCount > 0) {
+          toast.success("Make Buyer SuccessFull");
+          refetch();
+        }
+      });
+  };
+
   return (
     <div>
       <h2 className="text-3xl">All users</h2>
@@ -38,8 +54,10 @@ const AllUsers = () => {
               <th></th>
               <th>Name</th>
               <th>Email</th>
-              <th>Role</th>
-              <th>Favorite Color</th>
+              <th>Admin</th>
+              <th>Seller</th>
+              <th>Buyer</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
@@ -58,6 +76,30 @@ const AllUsers = () => {
                     </button>
                   ) : (
                     <span className="badge badge-success p-2">Admin</span>
+                  )}
+                </td>
+                <td>
+                  {user?.role !== "seller" ? (
+                    <button
+                      onClick={() => handleMakeAdmin(user._id)}
+                      className="btn btn-xs"
+                    >
+                      Make Seller
+                    </button>
+                  ) : (
+                    <span className="badge badge-success p-2">Seller</span>
+                  )}
+                </td>
+                <td>
+                  {user?.role !== "buyer" ? (
+                    <button
+                      onClick={() => handleMakeBuyer(user._id)}
+                      className="btn btn-xs"
+                    >
+                      Make Buyer
+                    </button>
+                  ) : (
+                    <span className="badge badge-secondary p-2">Buyer</span>
                   )}
                 </td>
                 <td>

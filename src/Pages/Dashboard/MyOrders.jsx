@@ -4,12 +4,14 @@ import { AuthContext } from "../../Context/AuthProvider";
 
 const MyOrders = () => {
   const { user } = useContext(AuthContext);
-
   const url = `http://localhost:5000/bookings?email=${user?.email}`;
 
   const { data: bookings = [] } = useQuery({
     queryKey: ["bookings", user?.email],
     queryFn: async () => {
+      if (!user?.email) {
+        return;
+      }
       const response = await fetch(url, {
         headers: {
           authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -36,18 +38,19 @@ const MyOrders = () => {
             </tr>
           </thead>
           <tbody>
-            {bookings.map((booking, i) => (
-              <tr key={booking._id} className="hover">
-                <th>{i + 1}</th>
-                <td>{booking.buyerName}</td>
-                <td>{booking.carName}</td>
-                <td>{booking.resalePrice}</td>
-                <td>{booking.email}</td>
-                <td>
-                  <button className="btn btn-primary btn-sm">x</button>
-                </td>
-              </tr>
-            ))}
+            {bookings &&
+              bookings?.map((booking, i) => (
+                <tr key={booking._id} className="hover">
+                  <th>{i + 1}</th>
+                  <td>{booking.buyerName}</td>
+                  <td>{booking.carName}</td>
+                  <td>{booking.resalePrice}</td>
+                  <td>{booking.email}</td>
+                  <td>
+                    <button className="btn btn-primary btn-sm">x</button>
+                  </td>
+                </tr>
+              ))}
           </tbody>
         </table>
       </div>
