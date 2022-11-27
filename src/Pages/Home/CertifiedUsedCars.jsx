@@ -3,8 +3,8 @@ import certificate from "../../Assets/Abstract-Certificate-Landscape.jpg";
 
 const CertifiedUsedCars = () => {
   return (
-    <section className="flex flex-col justify-evenly ">
-      <div className="lg:w-1/2 md:p-16">
+    <section className="flex flex-col md:flex-row justify-evenly ">
+      <div className="md:w-1/2 md:p-16">
         <h1 className="text-5xl font-semibold ">Certified Used Cars</h1>
         <p className="my-10">
           We have tailored our services around what our community needs. Global
@@ -13,7 +13,7 @@ const CertifiedUsedCars = () => {
           check out our customer reviews!
         </p>
       </div>
-      <div className="ld:w-1/2 md:p-5">
+      <div className="lg:w-1/2 md:p-5">
         <img src={certificate} alt="certificate" />
       </div>
     </section>

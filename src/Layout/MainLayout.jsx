@@ -7,7 +7,12 @@ const MainLayout = () => {
   return (
     <>
       <Navbar />
-      <section className="max-w-[1440px] mx-auto">
+      <section
+        data-aos="fade-up"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="1000"
+        className="max-w-[1440px] mx-auto"
+      >
         <Outlet />
       </section>
       <Footer />

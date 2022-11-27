@@ -4,12 +4,12 @@ import { FaAmazonPay } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthProvider";
 
-const MyOrders = () => {
+const AllOrders = () => {
   const { user } = useContext(AuthContext);
-  const url = `http://localhost:5000/bookings?email=${user?.email}`;
+  const url = `http://localhost:5000/bookings`;
 
   const { data: bookings = [] } = useQuery({
-    queryKey: ["bookings", user?.email],
+    queryKey: ["bookings"],
     queryFn: async () => {
       if (!user?.email) {
         return;
@@ -37,7 +37,7 @@ const MyOrders = () => {
               <th>Price</th>
               <th>email</th>
               <th>Phone Number</th>
-              <th>Time</th>
+
               <th>Actions</th>
             </tr>
           </thead>
@@ -51,7 +51,7 @@ const MyOrders = () => {
                   <td>{booking.resalePrice}</td>
                   <td>{booking.email}</td>
                   <td>{booking.phoneNumber}</td>
-                  <td>{new Date().toDateString()}</td>
+
                   <td>
                     {booking.resalePrice && !booking.paid && (
                       <Link to={`/dashboard/payment/${booking._id}`}>
@@ -73,4 +73,4 @@ const MyOrders = () => {
   );
 };
 
-export default MyOrders;
+export default AllOrders;

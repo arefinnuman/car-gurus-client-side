@@ -1,10 +1,22 @@
 import { useQuery } from "@tanstack/react-query";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
+import Loader from "../../../Components/Loader";
 import { AuthContext } from "../../../Context/AuthProvider";
+import ConfirmationModal from "../../Shared/ConfirmationModal/ConfirmationModal";
 
 const ManageMyCars = ({ postedBy }) => {
+  const [deletingCar, setDeletingCar] = useState(null);
+
+  const closeModal = () => {
+    setDeletingCar(null);
+  };
+
   const { user } = useContext(AuthContext);
-  const { data: myCars } = useQuery({
+  const {
+    data: myCars,
+    isLoading,
+    refetch,
+  } = useQuery({
     queryKey: ["myCars"],
     queryFn: async () => {
       try {
@@ -23,6 +35,25 @@ const ManageMyCars = ({ postedBy }) => {
       }
     },
   });
+  const handleDeleteCar = (car) => {
+    fetch(`http://localhost:5000/buy-cars/${car._id}`, {
+      method: "DELETE",
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success) {
+          console.log(data);
+          refetch();
+        }
+      });
+  };
+
+  if (isLoading) {
+    return <Loader />;
+  }
 
   return (
     <section>
@@ -38,6 +69,7 @@ const ManageMyCars = ({ postedBy }) => {
               <th>Resale Price</th>
               <th>Posting Time</th>
               <th>Location</th>
+              <th>Delete</th>
             </tr>
           </thead>
           <tbody>
@@ -50,11 +82,30 @@ const ManageMyCars = ({ postedBy }) => {
                 <td>{car.resalePrice}</td>
                 <td>{car.postedTime}</td>
                 <td>{car.location}</td>
+                <td>
+                  <label
+                    onClick={() => setDeletingCar(car)}
+                    htmlFor="confirmation-modal"
+                    className="btn btn-xs btn-error"
+                  >
+                    Delete
+                  </label>
+                </td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
+      {deletingCar && (
+        <ConfirmationModal
+          headingMessage={`Are you sure you want to delete`}
+          message={`If you delete ${deletingCar.name}, It can't be recovered`}
+          closeModal={closeModal}
+          action={handleDeleteCar}
+          modalData={deletingCar}
+          successButtonName="Delete"
+        ></ConfirmationModal>
+      )}
     </section>
   );
 };

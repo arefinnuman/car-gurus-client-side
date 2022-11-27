@@ -3,10 +3,16 @@ import { Link } from "react-router-dom";
 import logo from "../../../Assets/logo.png";
 import SecondaryOutlineButton from "../../../Components/SecondaryOutlineButton";
 import { AuthContext } from "../../../Context/AuthProvider";
+import useAdmin from "../../../Hooks/useAdmin";
+import { useBuyer } from "../../../Hooks/useBuyer";
+import { useSeller } from "../../../Hooks/useSeller";
 
 const Navbar = () => {
   // Calling User and Logout from AuthContext
   const { user, logOut } = useContext(AuthContext);
+  const [isBuyer] = useBuyer(user?.email);
+  const [isAdmin] = useAdmin(user?.email);
+  const [isSeller] = useSeller(user?.email);
 
   // Logout Function
   const handleLogout = () => {
@@ -24,9 +30,23 @@ const Navbar = () => {
       <li>
         <Link to="/buy-car">Buy</Link>
       </li>
-      <li>
-        <Link to="/dashboard">Dashboard</Link>
-      </li>
+
+      {isBuyer && (
+        <li>
+          <Link to="/my-cart">My Cart</Link>
+        </li>
+      )}
+
+      {isSeller && (
+        <li>
+          <Link to="/dashboard/manage-my-cars">Dashboard</Link>
+        </li>
+      )}
+      {isAdmin && (
+        <li>
+          <Link to="/dashboard">Dashboard</Link>
+        </li>
+      )}
 
       {user?.uid ? (
         <React.Fragment>

@@ -1,5 +1,5 @@
 import React from "react";
-import MyOrders from "./MyOrders";
+import MyOrders from "./AllOrders";
 
 const Dashboard = () => {
   return (

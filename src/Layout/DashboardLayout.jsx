@@ -30,7 +30,7 @@ const DashboardLayout = () => {
               {isBuyer ||
                 (isAdmin && (
                   <>
-                    <Link to="/dashboard">My Orders</Link>
+                    <Link to="/dashboard">All Orders</Link>
                   </>
                 ))}
             </li>
@@ -54,15 +54,28 @@ const DashboardLayout = () => {
             <li>
               {isAdmin && (
                 <>
-                  <Link to="/dashboard/manage-all-cars">Manage All Cars</Link>
+                  <Link to="/dashboard/all-buyers">All Buyers</Link>
                 </>
               )}
             </li>
-
+            <li>
+              {isAdmin && (
+                <>
+                  <Link to="/dashboard/all-sellers">All Seller</Link>
+                </>
+              )}
+            </li>
             <li>
               {isAdmin && (
                 <>
                   <Link to="/dashboard/all-users">All users</Link>
+                </>
+              )}
+            </li>
+            <li>
+              {isAdmin && (
+                <>
+                  <Link to="/dashboard/manage-all-cars">Manage All Cars</Link>
                 </>
               )}
             </li>

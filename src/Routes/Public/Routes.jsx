@@ -3,17 +3,21 @@ import DashboardLayout from "../../Layout/DashboardLayout";
 import MainLayout from "../../Layout/MainLayout";
 import BuyCarCollection from "../../Pages/BuyCar/BuyCarCollection";
 import AllUsers from "../../Pages/Dashboard/AllUsers";
+import Buyer from "../../Pages/Dashboard/Buyer/Buyer";
 import Dashboard from "../../Pages/Dashboard/Dashboard";
 import ManageAllCars from "../../Pages/Dashboard/ManageAllCars/ManageAllCars";
 import ManageMyCars from "../../Pages/Dashboard/ManageMyCars/ManageMyCars";
 import Payment from "../../Pages/Dashboard/Payment/Payment";
 import SellCar from "../../Pages/Dashboard/SellCar/SellCar";
+import Seller from "../../Pages/Dashboard/Seller/Seller";
 import CategorySection from "../../Pages/Home/Category/CategorySection";
 import Home from "../../Pages/Home/Home";
+import MyCart from "../../Pages/MyCart/MyCart";
 import ErrorPage from "../../Pages/Shared/ErrorPage";
 import SignIn from "../../Pages/Shared/SignIn/SignIn";
 import SignUp from "../../Pages/Shared/SignUp/SignUp";
 import AdminRoutes from "../Admin/AdminRoutes";
+import BuyerRoutes from "../Buyer/BuyerRoutes";
 import PrivateRoute from "../Private/PrivateRoute";
 import { SellerRoutes } from "../Seller/SellerRoutes";
 
@@ -46,6 +50,14 @@ export const router = createBrowserRouter([
         element: <CategorySection />,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/buy-cars/${params.category}`),
+      },
+      {
+        path: "/my-cart",
+        element: (
+          <BuyerRoutes>
+            <MyCart />
+          </BuyerRoutes>
+        ),
       },
       {
         path: "/sign-in",
@@ -99,6 +111,22 @@ export const router = createBrowserRouter([
         element: (
           <AdminRoutes>
             <AllUsers />
+          </AdminRoutes>
+        ),
+      },
+      {
+        path: "/dashboard/all-buyers",
+        element: (
+          <AdminRoutes>
+            <Buyer />
+          </AdminRoutes>
+        ),
+      },
+      {
+        path: "/dashboard/all-sellers",
+        element: (
+          <AdminRoutes>
+            <Seller />
           </AdminRoutes>
         ),
       },
