@@ -17,7 +17,6 @@ import ErrorPage from "../../Pages/Shared/ErrorPage";
 import SignIn from "../../Pages/Shared/SignIn/SignIn";
 import SignUp from "../../Pages/Shared/SignUp/SignUp";
 import AdminRoutes from "../Admin/AdminRoutes";
-import BuyerRoutes from "../Buyer/BuyerRoutes";
 import PrivateRoute from "../Private/PrivateRoute";
 import { SellerRoutes } from "../Seller/SellerRoutes";
 
@@ -53,11 +52,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/my-cart",
-        element: (
-          <BuyerRoutes>
-            <MyCart />
-          </BuyerRoutes>
-        ),
+        element: <MyCart />,
       },
       {
         path: "/sign-in",
