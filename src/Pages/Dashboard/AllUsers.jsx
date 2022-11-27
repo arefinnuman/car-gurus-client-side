@@ -28,6 +28,22 @@ const AllUsers = () => {
       });
   };
 
+  const handleSeller = (id) => {
+    fetch(`http://localhost:5000/users/seller/${id}`, {
+      method: "PUT",
+      headers: {
+        authorization: `bearer ${localStorage.getItem("accessToken")}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.modifiedCount > 0) {
+          toast.success("Make Seller SuccessFull");
+          refetch();
+        }
+      });
+  };
+
   const handleMakeBuyer = (id) => {
     fetch(`http://localhost:5000/users/buyer/${id}`, {
       method: "PUT",
@@ -81,7 +97,7 @@ const AllUsers = () => {
                 <td>
                   {user?.role !== "seller" ? (
                     <button
-                      onClick={() => handleMakeAdmin(user._id)}
+                      onClick={() => handleSeller(user._id)}
                       className="btn btn-xs"
                     >
                       Make Seller

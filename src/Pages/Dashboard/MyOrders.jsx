@@ -24,7 +24,7 @@ const MyOrders = () => {
 
   return (
     <div>
-      <h1 className="text-4xl mb-10">My Appointments</h1>
+      <h1 className="text-4xl mb-10">My orders</h1>
       <div className="">
         <table className="table ">
           <thead>
