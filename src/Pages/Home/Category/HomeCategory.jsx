@@ -8,18 +8,21 @@ const HomeCategory = () => {
   const categorySection = [
     {
       id: 1,
+      category: "suv",
       name: "Sport Utility Vehicle",
       img: suv,
       details: "SUVs are the most popular type of vehicle in the world.",
     },
     {
       id: 2,
+      category: "sports",
       name: "Sports Car",
       img: sportsCar,
       details: "Sports cars are designed for speed and performance.",
     },
     {
       id: 3,
+      category: "luxury",
       name: "Luxury Car",
       img: luxuryCar,
       details: "Luxury cars are designed for comfort and performance.",
@@ -35,8 +38,11 @@ const HomeCategory = () => {
       </h1>
       <div className="flex justify-center">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10">
-          {categorySection.map((category) => (
-            <CategoryCard key={category.id} category={category}></CategoryCard>
+          {categorySection.map((categoryDetails) => (
+            <CategoryCard
+              key={categoryDetails.id}
+              categoryDetails={categoryDetails}
+            ></CategoryCard>
           ))}
         </div>
       </div>

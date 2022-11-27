@@ -26,7 +26,7 @@ const ManageMyCars = ({ postedBy }) => {
 
   return (
     <section>
-      <h1>Manage My Cars</h1>
+      <h1 className="mb-10 text-3xl">Manage My Cars</h1>
       <div className="overflow-x-auto">
         <table className="table w-full">
           <thead>

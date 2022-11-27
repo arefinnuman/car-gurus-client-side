@@ -1,6 +1,6 @@
 import React from "react";
 
-const CarCard = ({ setCars, car }) => {
+const CategoryCarCard = ({ car, setCars }) => {
   const {
     name,
     price,
@@ -56,4 +56,4 @@ const CarCard = ({ setCars, car }) => {
   );
 };
 
-export default CarCard;
+export default CategoryCarCard;

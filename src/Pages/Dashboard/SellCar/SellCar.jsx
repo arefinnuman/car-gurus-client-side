@@ -6,11 +6,7 @@ import { AuthContext } from "../../../Context/AuthProvider";
 const SellCar = () => {
   const { user } = useContext(AuthContext);
 
-  const {
-    register,
-    formState: { errors },
-    handleSubmit,
-  } = useForm();
+  const { register, handleSubmit } = useForm();
 
   const imageHostKey = "41316516c169c0f2cabfe6b243f6f202";
 
@@ -131,13 +127,12 @@ const SellCar = () => {
               {...register("category", {
                 required: "Category is required",
               })}
-              className="select select-bordered w-full"
+              className="select select-secondary select-bordered w-full"
             >
-              <option value="suv" disabled selected>
-                suv
-              </option>
-              <option value="sports">sports</option>
-              <option value="luxury">luxury</option>
+              <option disabled>Select Your Role</option>
+              <option value="suv">Suv</option>
+              <option value="sports">Sports Car</option>
+              <option value="luxury">Luxury Car</option>
             </select>
           </div>
 

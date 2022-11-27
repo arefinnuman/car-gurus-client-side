@@ -35,7 +35,7 @@ const SignUp = () => {
         };
         updateUser(userInfo)
           .then(() => {
-            saveUserToDb(data.email, data.name);
+            saveUserToDb(data.email, data.name, data.role);
           })
           .catch((error) => {
             console.log(error);
@@ -47,8 +47,8 @@ const SignUp = () => {
       });
   };
 
-  const saveUserToDb = (email, name) => {
-    const user = { email, name };
+  const saveUserToDb = (email, name, role) => {
+    const user = { email, name, role };
     fetch("http://localhost:5000/users", {
       method: "POST",
       headers: {
@@ -121,6 +121,24 @@ const SignUp = () => {
                 placeholder=""
                 className="input input-bordered w-full max-w-xs"
               />
+              {errors.password && (
+                <p className="text-xs text-error">{errors.password?.message}</p>
+              )}
+            </div>
+            <div className="form-control w-full max-w-xs">
+              <label className="label">
+                <span className="label-text">Select your Role</span>
+              </label>
+              <select
+                {...register("role", {
+                  required: "Password is required",
+                })}
+                className="select select-bordered w-full max-w-xs"
+              >
+                <option disabled>Select Your Role</option>
+                <option value="seller">Seller</option>
+                <option value="buyer">Buyer</option>
+              </select>
               {errors.password && (
                 <p className="text-xs text-error">{errors.password?.message}</p>
               )}

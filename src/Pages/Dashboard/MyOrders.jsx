@@ -1,5 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import React, { useContext } from "react";
+import { FaAmazonPay } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthProvider";
 
 const MyOrders = () => {
@@ -26,7 +28,7 @@ const MyOrders = () => {
     <div>
       <h1 className="text-4xl mb-10">My orders</h1>
       <div className="">
-        <table className="table ">
+        <table className="table table-zebra ">
           <thead>
             <tr>
               <th></th>
@@ -34,6 +36,8 @@ const MyOrders = () => {
               <th>Car Name</th>
               <th>Price</th>
               <th>email</th>
+              <th>Phone Number</th>
+              <th>Time</th>
               <th>Actions</th>
             </tr>
           </thead>
@@ -46,8 +50,19 @@ const MyOrders = () => {
                   <td>{booking.carName}</td>
                   <td>{booking.resalePrice}</td>
                   <td>{booking.email}</td>
+                  <td>{booking.phoneNumber}</td>
+                  <td>{new Date().toDateString()}</td>
                   <td>
-                    <button className="btn btn-primary btn-sm">x</button>
+                    {booking.resalePrice && !booking.paid && (
+                      <Link to={`/dashboard/payment/${booking._id}`}>
+                        <button className="btn btn-secondary text-white text-2xl btn-sm">
+                          <FaAmazonPay />
+                        </button>
+                      </Link>
+                    )}
+                    {booking.resalePrice && booking.paid && (
+                      <span className="text-success">Paid</span>
+                    )}
                   </td>
                 </tr>
               ))}

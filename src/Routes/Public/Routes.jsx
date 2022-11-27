@@ -6,7 +6,9 @@ import AllUsers from "../../Pages/Dashboard/AllUsers";
 import Dashboard from "../../Pages/Dashboard/Dashboard";
 import ManageAllCars from "../../Pages/Dashboard/ManageAllCars/ManageAllCars";
 import ManageMyCars from "../../Pages/Dashboard/ManageMyCars/ManageMyCars";
+import Payment from "../../Pages/Dashboard/Payment/Payment";
 import SellCar from "../../Pages/Dashboard/SellCar/SellCar";
+import CategorySection from "../../Pages/Home/Category/CategorySection";
 import Home from "../../Pages/Home/Home";
 import ErrorPage from "../../Pages/Shared/ErrorPage";
 import SignIn from "../../Pages/Shared/SignIn/SignIn";
@@ -34,6 +36,18 @@ export const router = createBrowserRouter([
         element: <BuyCarCollection />,
       },
       {
+        path: "/buy-car/:category",
+        element: <CategorySection />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/buy-cars/${params.category}`),
+      },
+      {
+        path: "home/buy-car/:category",
+        element: <CategorySection />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/buy-cars/${params.category}`),
+      },
+      {
         path: "/sign-in",
         element: <SignIn />,
       },
@@ -54,6 +68,12 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard",
         element: <Dashboard />,
+      },
+      {
+        path: "/dashboard/payment/:id",
+        element: <Payment />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/bookings/${params.id}`),
       },
 
       {
