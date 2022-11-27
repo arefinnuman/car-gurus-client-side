@@ -13,7 +13,6 @@ const SellCar = () => {
   } = useForm();
 
   const imageHostKey = "41316516c169c0f2cabfe6b243f6f202";
-  console.log(imageHostKey);
 
   const navigate = useNavigate();
 
@@ -42,6 +41,7 @@ const SellCar = () => {
             postedTime: new Date().toDateString(),
             postedBy: user.displayName,
             yearsOfUse: data.yearsOfUse,
+            category: data.category,
           };
 
           // Save the doctor information to the database
@@ -125,6 +125,24 @@ const SellCar = () => {
 
           <div className="form-control w-full ">
             <label className="label">
+              <span className="label-text">Category</span>
+            </label>
+            <select
+              {...register("category", {
+                required: "Category is required",
+              })}
+              className="select select-bordered w-full"
+            >
+              <option value="suv" disabled selected>
+                suv
+              </option>
+              <option value="sports">sports</option>
+              <option value="luxury">luxury</option>
+            </select>
+          </div>
+
+          <div className="form-control w-full ">
+            <label className="label">
               <span className="label-text">Years of Use</span>
             </label>
             <input
@@ -187,7 +205,6 @@ const SellCar = () => {
             value="Add Car"
             type="submit"
           />
-          {/* {signUpError && <p className="text-error">{signUpError}</p>} */}
         </form>
       </div>
     </section>

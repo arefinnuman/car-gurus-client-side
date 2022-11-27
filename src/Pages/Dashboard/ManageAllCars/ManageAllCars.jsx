@@ -1,8 +1,20 @@
 import { useQuery } from "@tanstack/react-query";
-import React from "react";
+import React, { useState } from "react";
+import Loader from "../../../Components/Loader";
+import ConfirmationModal from "../../Shared/ConfirmationModal/ConfirmationModal";
 
-const ManageAllCars = ({}) => {
-  const { data: cars } = useQuery({
+const ManageAllCars = () => {
+  const [deletingCar, setDeletingCar] = useState(null);
+
+  const closeModal = () => {
+    setDeletingCar(null);
+  };
+
+  const {
+    data: cars,
+    isLoading,
+    refetch,
+  } = useQuery({
     queryKey: ["cars"],
     queryFn: async () => {
       try {
@@ -19,9 +31,28 @@ const ManageAllCars = ({}) => {
     },
   });
 
+  const handleDeleteCar = (car) => {
+    fetch(`http://localhost:5000/buy-cars/${car._id}`, {
+      method: "DELETE",
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success) {
+          console.log(data);
+          refetch();
+        }
+      });
+  };
+
+  if (isLoading) {
+    return <Loader />;
+  }
   return (
     <section>
-      <h1>Manage All Cars</h1>
+      <h1 className="mb-10 text-2xl">Manage All Cars</h1>
       <div className="overflow-x-auto">
         <table className="table w-full">
           <thead>
@@ -33,6 +64,7 @@ const ManageAllCars = ({}) => {
               <th>Resale Price</th>
               <th>Posting Time</th>
               <th>Location</th>
+              <th>Delete</th>
             </tr>
           </thead>
           <tbody>
@@ -45,11 +77,30 @@ const ManageAllCars = ({}) => {
                 <td>{car.resalePrice}</td>
                 <td>{car.postedTime}</td>
                 <td>{car.location}</td>
+                <td>
+                  <label
+                    onClick={() => setDeletingCar(car)}
+                    htmlFor="confirmation-modal"
+                    className="btn btn-xs btn-error"
+                  >
+                    Delete
+                  </label>
+                </td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
+      {deletingCar && (
+        <ConfirmationModal
+          headingMessage={`Are you sure you want to delete`}
+          message={`If you delete ${deletingCar.name}, It can't be recovered`}
+          closeModal={closeModal}
+          action={handleDeleteCar}
+          modalData={deletingCar}
+          successButtonName="Delete"
+        ></ConfirmationModal>
+      )}
     </section>
   );
 };
