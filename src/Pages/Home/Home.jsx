@@ -1,5 +1,6 @@
 import React from "react";
 import AnimationSection from "./AnimationSection/AnimationSection";
+import HomeCategory from "./Category/HomeCategory";
 import CertifiedUsedCars from "./CertifiedUsedCars";
 import FeatureSection from "./FeatureSection/FeatureSection";
 import HomeForm from "./HomeForm";
@@ -12,6 +13,7 @@ const Home = () => {
   return (
     <div>
       <HomePageBanner />
+      <HomeCategory />
       <HomeText />
       <FeatureSection />
       <AnimationSection />
