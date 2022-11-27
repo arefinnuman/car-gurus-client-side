@@ -6,45 +6,52 @@ import img4 from "../../Assets/WhyChoose/ONLINE1.png";
 import PrimaryButton from "../../Components/PrimaryButton";
 
 const WhyChooseUs = () => {
+  const whyChooseData = [
+    {
+      id: 1,
+      img: img1,
+      title: "Do more From Home",
+    },
+    {
+      id: 2,
+      img: img2,
+      title: "24 Hours Test Drive",
+    },
+    {
+      id: 3,
+      img: img3,
+      title: "Money Return Guarantee",
+    },
+    {
+      id: 4,
+      img: img4,
+      title: "Major System Covered",
+    },
+  ];
   return (
-    <section className="flex justify-around items-center  mt-16">
-      <div className="bg-base-200 p-20 rounded-xl ">
-        <div className="flex justify-around items-center m-2">
-          <img className="w-20" src={img1} alt="" />
-          <div>
-            <h1>Do More From Home</h1>
-            <p></p>
+    <section className="flex flex-col md:flex-row  justify-around items-center  mt-16">
+      <div className="bg-base-200 rounded-xl p-10 ">
+        {whyChooseData.map((item) => (
+          <div key={item.id} className="flex justify-around items-center  m-2">
+            <img className="w-20" src={item.img} alt="" />
+            <div>
+              <h1 className="w-60 pl-4">{item.title}</h1>
+            </div>
           </div>
-        </div>
-        <div className="flex justify-around items-center m-2">
-          <img className="w-20" src={img2} alt="" />
-          <div>
-            <h1>24 Hours Test Drive</h1>
-            <p></p>
-          </div>
-        </div>
-        <div className="flex justify-around items-center m-2">
-          <img className="w-20" src={img3} alt="" />
-          <div>
-            <h1>Money Return Guarantee</h1>
-            <p></p>
-          </div>
-        </div>
-        <div className="flex justify-around items-center m-2">
-          <img className="w-20" src={img4} alt="" />
-          <div>
-            <h1>Major System Covered</h1>
-            <p></p>
-          </div>
-        </div>
+        ))}
       </div>
-      <div className="w-1/2">
+      <div className="lg:w-1/2 p-5 md:p-0">
         <h1 className="text-5xl font-black">Why Choose Us</h1>
         <p className="text-xl my-4">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat
-          architecto blanditiis porro ea libero iusto earum vitae exercitationem
-          inventore velit, aut, itaque quaerat error possimus quos omnis.
-          Tempora, omnis voluptatibus.
+          We believe in giving you the very best service for auto repair that
+          you can find. That’s why we seek out and hire the very best auto
+          repair technicians. We look for technicians that have strong
+          experience with the brands of vehicles we service. We hire those with
+          ASE Certified and Master Technician certifications that shows they
+          keep current on their training. Experience and expertise translate
+          into the job done right the first time and done quicker. By hiring the
+          right people, we are able to provide one of the longest auto repair
+          warranties in the business — 36 months or 36,000 miles.
         </p>
 
         <PrimaryButton>Buy Now</PrimaryButton>
