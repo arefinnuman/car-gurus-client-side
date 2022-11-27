@@ -67,10 +67,7 @@ const SellCar = () => {
     <section className="min-h-screen flex justify-center">
       <div>
         <h1 className="text-4xl">Sell Car</h1>
-        <form
-          className="form-control w-full"
-          onSubmit={handleSubmit(handleSellCar)}
-        >
+        <form className="form-control " onSubmit={handleSubmit(handleSellCar)}>
           <div>
             <label className="label">
               <span className="label-text">Name</span>
@@ -81,7 +78,7 @@ const SellCar = () => {
               })}
               type="name"
               placeholder=""
-              className="input input-bordered w-full "
+              className="input input-bordered input-secondary w-full"
             />
           </div>
           <div className="form-control w-full ">
@@ -94,7 +91,7 @@ const SellCar = () => {
               })}
               type="number"
               placeholder=""
-              className="input input-bordered w-full "
+              className="input input-bordered input-secondary w-full "
             />
           </div>
 
@@ -108,7 +105,7 @@ const SellCar = () => {
               })}
               type="number"
               placeholder=""
-              className="input input-bordered w-full "
+              className="input input-bordered input-secondary w-full "
             />
           </div>
 
@@ -122,7 +119,7 @@ const SellCar = () => {
               })}
               type="number"
               placeholder=""
-              className="input input-bordered w-full "
+              className="input input-bordered input-secondary w-full "
             />
           </div>
 
@@ -136,7 +133,7 @@ const SellCar = () => {
               })}
               type="number"
               placeholder=""
-              className="input input-bordered w-full "
+              className="input input-bordered input-secondary w-full "
             />
           </div>
 
@@ -150,7 +147,7 @@ const SellCar = () => {
               })}
               type="text"
               placeholder=""
-              className="input input-bordered w-full "
+              className="input input-bordered  input-secondary w-full "
             />
           </div>
 
@@ -181,15 +178,12 @@ const SellCar = () => {
               })}
               type="file"
               placeholder=""
-              className="input input-bordered w-full "
+              className="input input-bordered input-secondary w-full "
             />
-            {errors.img && (
-              <p className="text-error text-xs">{errors.img?.message}</p>
-            )}
           </div>
 
           <input
-            className="btn btn-neutral mt-4 w-full"
+            className="btn btn-accent mt-4 w-full"
             value="Add Car"
             type="submit"
           />

@@ -4,7 +4,8 @@ import MainLayout from "../../Layout/MainLayout";
 import BuyCarCollection from "../../Pages/BuyCar/BuyCarCollection";
 import AllUsers from "../../Pages/Dashboard/AllUsers";
 import Dashboard from "../../Pages/Dashboard/Dashboard";
-import MyPost from "../../Pages/Dashboard/MyPost/MyPost";
+import ManageAllCars from "../../Pages/Dashboard/ManageAllCars/ManageAllCars";
+import ManageMyCars from "../../Pages/Dashboard/ManageMyCars/ManageMyCars";
 import SellCar from "../../Pages/Dashboard/SellCar/SellCar";
 import Home from "../../Pages/Home/Home";
 import ErrorPage from "../../Pages/Shared/ErrorPage";
@@ -54,14 +55,7 @@ export const router = createBrowserRouter([
         path: "/dashboard",
         element: <Dashboard />,
       },
-      {
-        path: "/dashboard/my-post",
-        element: (
-          <SellerRoutes>
-            <MyPost />,
-          </SellerRoutes>
-        ),
-      },
+
       {
         path: "/dashboard/sell-car",
         element: (
@@ -70,11 +64,29 @@ export const router = createBrowserRouter([
           </SellerRoutes>
         ),
       },
+
+      {
+        path: "/dashboard/manage-my-cars",
+        element: (
+          <SellerRoutes>
+            <ManageMyCars />,
+          </SellerRoutes>
+        ),
+      },
+
       {
         path: "/dashboard/all-users",
         element: (
           <AdminRoutes>
             <AllUsers />
+          </AdminRoutes>
+        ),
+      },
+      {
+        path: "/dashboard/manage-all-cars",
+        element: (
+          <AdminRoutes>
+            <ManageAllCars />
           </AdminRoutes>
         ),
       },
