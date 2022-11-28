@@ -28,7 +28,10 @@ const Navbar = () => {
         <Link to="/home">Home</Link>
       </li>
       <li>
-        <Link to="/buy-car">Buy</Link>
+        <Link to="/buy-car">Explore</Link>
+      </li>
+      <li>
+        <Link to="/blogs">Blogs</Link>
       </li>
 
       {isBuyer && (

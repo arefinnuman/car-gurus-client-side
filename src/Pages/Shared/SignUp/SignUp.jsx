@@ -21,6 +21,7 @@ const SignUp = () => {
 
   if (token) {
     navigate("/");
+    window.location.reload();
   }
 
   const handleSignUp = (data) => {
@@ -29,6 +30,7 @@ const SignUp = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
+
         toast.success("User Created Successfully");
         const userInfo = {
           displayName: data.name,
@@ -49,7 +51,7 @@ const SignUp = () => {
 
   const saveUserToDb = (email, name, role) => {
     const user = { email, name, role };
-    fetch("http://localhost:5000/users", {
+    fetch("https://car-gurus-server-site.vercel.app/users", {
       method: "POST",
       headers: {
         "content-type": "application/json",

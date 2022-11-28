@@ -6,7 +6,7 @@ import { AuthContext } from "../../Context/AuthProvider";
 
 const AllOrders = () => {
   const { user } = useContext(AuthContext);
-  const url = `http://localhost:5000/bookings`;
+  const url = `https://car-gurus-server-site.vercel.app/bookings`;
 
   const { data: bookings = [] } = useQuery({
     queryKey: ["bookings"],
@@ -26,7 +26,7 @@ const AllOrders = () => {
 
   return (
     <div>
-      <h1 className="text-4xl mb-10">My orders</h1>
+      <h1 className="text-4xl mb-10">All orders</h1>
       <div className="">
         <table className="table table-zebra ">
           <thead>

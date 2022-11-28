@@ -6,7 +6,7 @@ const BuyCarCollection = () => {
   const [carsCollection, setCarsCollection] = useState([]);
   const [cars, setCars] = useState(null);
   useEffect(() => {
-    fetch("http://localhost:5000/buy-cars")
+    fetch("https://car-gurus-server-site.vercel.app/buy-cars")
       .then((res) => res.json())
       .then((data) => setCarsCollection(data));
   }, []);

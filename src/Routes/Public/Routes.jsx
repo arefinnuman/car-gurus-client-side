@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import DashboardLayout from "../../Layout/DashboardLayout";
 import MainLayout from "../../Layout/MainLayout";
+import Blogs from "../../Pages/Blogs/Blogs";
 import BuyCarCollection from "../../Pages/BuyCar/BuyCarCollection";
 import AllUsers from "../../Pages/Dashboard/AllUsers";
 import Buyer from "../../Pages/Dashboard/Buyer/Buyer";
@@ -39,16 +40,24 @@ export const router = createBrowserRouter([
         element: <BuyCarCollection />,
       },
       {
+        path: "/blogs",
+        element: <Blogs />,
+      },
+      {
         path: "/buy-car/:category",
         element: <CategorySection />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/buy-cars/${params.category}`),
+          fetch(
+            `https://car-gurus-server-site.vercel.app/buy-cars/${params.category}`
+          ),
       },
       {
         path: "home/buy-car/:category",
         element: <CategorySection />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/buy-cars/${params.category}`),
+          fetch(
+            `https://car-gurus-server-site.vercel.app/buy-cars/${params.category}`
+          ),
       },
       {
         path: "/my-cart",
@@ -80,7 +89,9 @@ export const router = createBrowserRouter([
         path: "/dashboard/payment/:id",
         element: <Payment />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/bookings/${params.id}`),
+          fetch(
+            `https://car-gurus-server-site.vercel.app/bookings/${params.id}`
+          ),
       },
 
       {

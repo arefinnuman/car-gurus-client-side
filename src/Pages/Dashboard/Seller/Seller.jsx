@@ -12,11 +12,14 @@ const Seller = () => {
   } = useQuery({
     queryKey: ["sellers"],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/users/sellers", {
-        headers: {
-          authorization: `bearer ${localStorage.getItem("accessToken")}`,
-        },
-      });
+      const res = await fetch(
+        "https://car-gurus-server-site.vercel.app/users/sellers",
+        {
+          headers: {
+            authorization: `bearer ${localStorage.getItem("accessToken")}`,
+          },
+        }
+      );
       const data = await res.json();
       return data;
     },
@@ -29,7 +32,7 @@ const Seller = () => {
   };
 
   const handleDeleteSeller = (user) => {
-    fetch(`http://localhost:5000/users/${user._id}`, {
+    fetch(`https://car-gurus-server-site.vercel.app/users/${user._id}`, {
       method: "DELETE",
       headers: {
         authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -50,7 +53,7 @@ const Seller = () => {
   return (
     <div>
       <div>
-        <h2 className="text-3xl">All users</h2>
+        <h2 className="text-3xl">Sellers</h2>
         <div className="overflow-x-auto">
           <table className="table w-full">
             <thead>

@@ -12,18 +12,21 @@ const AllUsers = () => {
   } = useQuery({
     queryKey: ["users"],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/users", {
-        headers: {
-          authorization: `bearer ${localStorage.getItem("accessToken")}`,
-        },
-      });
+      const res = await fetch(
+        "https://car-gurus-server-site.vercel.app/users",
+        {
+          headers: {
+            authorization: `bearer ${localStorage.getItem("accessToken")}`,
+          },
+        }
+      );
       const data = await res.json();
       return data;
     },
   });
 
   const handleMakeAdmin = (id) => {
-    fetch(`http://localhost:5000/users/admin/${id}`, {
+    fetch(`https://car-gurus-server-site.vercel.app/users/admin/${id}`, {
       method: "PUT",
       headers: {
         authorization: `bearer ${localStorage.getItem("accessToken")}`,
@@ -39,7 +42,7 @@ const AllUsers = () => {
   };
 
   const handleSeller = (id) => {
-    fetch(`http://localhost:5000/users/seller/${id}`, {
+    fetch(`https://car-gurus-server-site.vercel.app/users/seller/${id}`, {
       method: "PUT",
       headers: {
         authorization: `bearer ${localStorage.getItem("accessToken")}`,
@@ -55,7 +58,7 @@ const AllUsers = () => {
   };
 
   const handleMakeBuyer = (id) => {
-    fetch(`http://localhost:5000/users/buyer/${id}`, {
+    fetch(`https://car-gurus-server-site.vercel.app/users/buyer/${id}`, {
       method: "PUT",
       headers: {
         authorization: `bearer ${localStorage.getItem("accessToken")}`,
@@ -77,7 +80,7 @@ const AllUsers = () => {
   };
 
   const handleDeleteCar = (user) => {
-    fetch(`http://localhost:5000/users/${user._id}`, {
+    fetch(`https://car-gurus-server-site.vercel.app/users/${user._id}`, {
       method: "DELETE",
       headers: {
         authorization: `Bearer ${localStorage.getItem("token")}`,

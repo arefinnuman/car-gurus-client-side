@@ -18,11 +18,14 @@ const ManageAllCars = () => {
     queryKey: ["cars"],
     queryFn: async () => {
       try {
-        const response = await fetch("http://localhost:5000/buy-cars", {
-          headers: {
-            authorization: `bearer ${localStorage.getItem("accessToken")}`,
-          },
-        });
+        const response = await fetch(
+          "https://car-gurus-server-site.vercel.app/buy-cars",
+          {
+            headers: {
+              authorization: `bearer ${localStorage.getItem("accessToken")}`,
+            },
+          }
+        );
         const data = await response.json();
         return data;
       } catch (error) {
@@ -32,7 +35,7 @@ const ManageAllCars = () => {
   });
 
   const handleDeleteCar = (car) => {
-    fetch(`http://localhost:5000/buy-cars/${car._id}`, {
+    fetch(`https://car-gurus-server-site.vercel.app/buy-cars/${car._id}`, {
       method: "DELETE",
       headers: {
         authorization: `Bearer ${localStorage.getItem("token")}`,

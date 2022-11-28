@@ -41,7 +41,7 @@ const SellCar = () => {
           };
 
           // Save the doctor information to the database
-          fetch(`http://localhost:5000/sell-car`, {
+          fetch(`https://car-gurus-server-site.vercel.app/sell-car`, {
             method: "POST",
             headers: {
               "content-type": "application/json",

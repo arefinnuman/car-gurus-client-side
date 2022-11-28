@@ -21,7 +21,7 @@ const ManageMyCars = ({ postedBy }) => {
     queryFn: async () => {
       try {
         const response = await fetch(
-          `http://localhost:5000/my-cars/${user?.displayName}`,
+          `https://car-gurus-server-site.vercel.app/my-cars/${user?.displayName}`,
           {
             headers: {
               authorization: `bearer ${localStorage.getItem("accessToken")}`,
@@ -36,7 +36,7 @@ const ManageMyCars = ({ postedBy }) => {
     },
   });
   const handleDeleteCar = (car) => {
-    fetch(`http://localhost:5000/buy-cars/${car._id}`, {
+    fetch(`https://car-gurus-server-site.vercel.app/buy-cars/${car._id}`, {
       method: "DELETE",
       headers: {
         authorization: `Bearer ${localStorage.getItem("token")}`,
