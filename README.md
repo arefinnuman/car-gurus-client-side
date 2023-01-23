@@ -1,13 +1,11 @@
-### Final Assignment
-
 ### This is a react based Web Application.
 
-## React Router Dom, Tailwind, React Toastify, Lotti Animation, React Icons are being used
+### A Car Selling Website - [Live Website](https://car-gurus-d0368.web.app) | [Client Side](https://github.com/arefinnuman/car-gurus-client-side) | [Server Side](https://github.com/arefinnuman/car-gurus-server-side)
 
-## people can login through firebase
+- Features like Admin, Buyer & Seller Dashboard.
+- Users can create accounts and log in to this website using their Google credentials.
+- Users can place orders and view the order list they have generated
 
+**Technologies:** React Js, Firebase, Tailwind CSS, Daisy UI, React Router Dom, React Hooks, MongoDB, NodeJS, Express Js
 
-# This system have millions of cars and a lots off option to buy premium cars. We are providing good quality over the year.  Hope you will love oue resale Price and you should purchase it.
-
-
-* [ ] ![1669574164707](image/README/1669574164707.png)![1669574193108](image/README/1669574193108.png)gi
+![1669574164707](image/README/1669574164707.png)![1669574193108](image/README/1669574193108.png)

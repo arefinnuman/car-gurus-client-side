@@ -64,6 +64,7 @@ const SellCar = () => {
       <div>
         <h1 className="text-4xl">Sell Car</h1>
         <form className="form-control " onSubmit={handleSubmit(handleSellCar)}>
+          {/* Name */}
           <div>
             <label className="label">
               <span className="label-text">Name</span>
@@ -77,6 +78,8 @@ const SellCar = () => {
               className="input input-bordered input-secondary w-full"
             />
           </div>
+
+          {/* Price */}
           <div className="form-control w-full ">
             <label className="label">
               <span className="label-text">Buying Price</span>
@@ -91,6 +94,7 @@ const SellCar = () => {
             />
           </div>
 
+          {/* Resale Price */}
           <div className="form-control w-full ">
             <label className="label">
               <span className="label-text">Resale Price</span>
@@ -105,6 +109,7 @@ const SellCar = () => {
             />
           </div>
 
+          {/* Engine Capacity */}
           <div className="form-control w-full ">
             <label className="label">
               <span className="label-text">Engine Capacity</span>
@@ -119,6 +124,7 @@ const SellCar = () => {
             />
           </div>
 
+          {/* Category */}
           <div className="form-control w-full ">
             <label className="label">
               <span className="label-text">Category</span>
@@ -136,6 +142,7 @@ const SellCar = () => {
             </select>
           </div>
 
+          {/* Year Of Use */}
           <div className="form-control w-full ">
             <label className="label">
               <span className="label-text">Years of Use</span>
@@ -150,6 +157,7 @@ const SellCar = () => {
             />
           </div>
 
+          {/*  Location */}
           <div className="form-control w-full ">
             <label className="label">
               <span className="label-text">Location</span>
@@ -164,6 +172,7 @@ const SellCar = () => {
             />
           </div>
 
+          {/* Description */}
           <div className="form-control w-full ">
             <label className="label">
               <span className="label-text">Description</span>
