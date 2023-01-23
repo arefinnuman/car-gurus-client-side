@@ -8,4 +8,14 @@
 
 **Technologies:** React Js, Firebase, Tailwind CSS, Daisy UI, React Router Dom, React Hooks, MongoDB, NodeJS, Express Js
 
+---
+
+
+
+**Admin Info\**
+
+email: admin@mail.com
+
+password: Az258@65
+
 ![1669574164707](image/README/1669574164707.png)![1669574193108](image/README/1669574193108.png)
