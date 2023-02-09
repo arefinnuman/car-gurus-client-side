@@ -30,9 +30,6 @@ const Navbar = () => {
       <li>
         <Link to="/buy-car">Explore</Link>
       </li>
-      <li>
-        <Link to="/blogs">Blogs</Link>
-      </li>
 
       {isBuyer && (
         <li>
